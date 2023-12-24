@@ -1,12 +1,14 @@
 import React from 'react';
+import Weather from "./Weather";
 import './App.css';
+
 
 
 export default function App() {
   return (
     <div className="App">
       <div className="container">
-      Weather App
+      <Weather />
       <footer>
         This project was coded by <a href="https://www.linkedin.com/in/taiwo-oresanya-b00209135/" target="_blank" rel="noreferrer">Taiwo Oresanya</a>  
       {""} and is {""}
