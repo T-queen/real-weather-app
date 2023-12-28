@@ -1,16 +1,14 @@
 import React from "react";
 import ReactAnimatedWeather from 'react-animated-weather';
 
-
 export default function WeatherIcon(props) {
-    console.log(props.code);
     const codeMapping = {
         "01d": "CLEAR_DAY",
         "01n": "CLEAR_NIGHT",
         "02d": "PARTLY_CLOUDY_DAY",
         "02n": "PARTLY_CLOUDY_NIGHT",
-        "03d": "PARTLY_CLOUDY_DAY",
-        "03n": "PARTLY_CLOUDY_NIGHT",
+        "03d": "CLOUDY",
+        "03n": "CLOUDY",
         "04d": "CLOUDY",
         "04n": "CLOUDY",
         "09d": "RAIN",
@@ -22,18 +20,17 @@ export default function WeatherIcon(props) {
         "13d": "SNOW",
         "13n": "SNOW",
         "50d": "FOG",
-        "50n": "FOG",
-        
+        "50n": "FOG"
     };
 
-    const icon = codeMapping[props.code] || "CLEAR_DAY"; // default to "CLEAR_DAY" if the code is not found in the mapping
+    const icon = codeMapping.hasOwnProperty(props.code) ? codeMapping[props.code] : "CLEAR_DAY";
 
-            return (
-                <ReactAnimatedWeather
-                    icon={icon}
-                    color="#1e1e1e"
-                    size={52}
-                    animate={true}
-                />
-            );
-    }
+    return (
+        <ReactAnimatedWeather
+            icon={icon}
+            color="#1e1e1e"
+            size={52}
+            animate={true}
+        />
+    );
+}
