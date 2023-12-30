@@ -17,7 +17,7 @@ export default function WeatherInfo(props) {
         <div className="col-6">
             <div className="clearfix" style={{ display: 'flex', alignItems: 'start' }}>
                 <div className="float-left">
-                <WeatherIcon code={props.data.icon} />
+                <WeatherIcon code={props.data.icon} size={52} />
                 </div>
                   
             
@@ -29,7 +29,7 @@ export default function WeatherInfo(props) {
         </div>
         <div className="col-6">
             <ul>
-                <li>Precipitation 15% </li>
+                
                 <li>Humidity {props.data.humidity}%</li>
                 <li>Wind {props.data.wind}km/hr</li>
             </ul>
